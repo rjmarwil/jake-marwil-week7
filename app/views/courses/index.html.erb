@@ -1,0 +1,29 @@
+<h1>Courses</h1>
+
+<br/>
+
+<%= link_to 'New Course', new_course_path %>
+
+<br/><br/>
+
+<table border=1>
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>About</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.user_name, user %></td>
+        <td><%= user.about %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
