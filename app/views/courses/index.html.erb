@@ -9,20 +9,20 @@
 <table border=1>
   <thead>
     <tr>
-      <th>User Name</th>
-      <th>About</th>
+      <th>Title</th>
+      <th>Day or Night</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @courses.each do |course| %>
       <tr>
-        <td><%= link_to user.user_name, user %></td>
-        <td><%= user.about %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to course.title, course %></td>
+        <td><%= course.day_night %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Delete', course_path(course), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
