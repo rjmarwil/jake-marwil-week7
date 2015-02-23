@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
 
-  validates :password, :about, presence: true
+  validates :title, :day_night, presence: true
 
 end
