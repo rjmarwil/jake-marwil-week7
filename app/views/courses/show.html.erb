@@ -1,0 +1,27 @@
+<h1><%= @course.course_name %></h1>
+
+<br/>
+
+<table border=1>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Day or Night</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @course.title %></td>
+      <% if @course.day_night == true %>
+      <td>Day</td>
+      <% else %>
+      <td>Night</td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+<a href="/courses">Back</a>
