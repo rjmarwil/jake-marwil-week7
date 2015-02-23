@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
-  validates :title, :day_night, presence: true
+  validates :user_name, :password, :about, presence: true
+
+  has_secure_password
 
 end
