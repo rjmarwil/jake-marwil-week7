@@ -20,7 +20,11 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= link_to course.title, course %></td>
-        <td><%= course.day_night %></td>
+        <% if course.day_night == true %>
+        <td>Day</td>
+        <% else %>
+        <td>Night</td>
+        <% end %>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Delete', course_path(course), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
