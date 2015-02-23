@@ -8,6 +8,19 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <% if current_user %>
+        <li><%= link_to "#{current_user.user_name}", user_path(current_user) %></li>
+        <li><%= link_to 'Log Out', logout_path %></li>
+      <% else %>
+        <li><%= link_to 'Log In', login_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+
+<br/>
+
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
