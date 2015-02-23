@@ -1,0 +1,27 @@
+<%= form_for(@course) do |f| %>
+
+<% if @course.errors.any? %>
+  <h2><%= pluralize(@course.errors.count, "error") %> prohibited this <%= @course.class %> from being saved:</h2>
+  <ul>
+  <% @course.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<br/>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<br/>
+
+<%= f.label :day_night, "Day?" %>
+<%= f.check_box :day_night %> (Leave unchecked if a night course)
+
+<br/>
+
+<%= f.submit %>
+<a href="/courses">Cancel</a>
+
+<% end %>
